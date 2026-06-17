@@ -1,157 +1,65 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Tic Tac Toe buatan luthfi ganteng</title>
-
-<style>
-body{
-    font-family: Arial, sans-serif;
-    background:#222;
-    color:white;
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-    margin-top:30px;
-}
-
-h1{
-    margin-bottom:10px;
-}
-
-#status{
-    font-size:20px;
-    margin-bottom:20px;
-}
-
-.board{
-    display:grid;
-    grid-template-columns:repeat(3,100px);
-    gap:5px;
-}
-
-.cell{
-    width:100px;
-    height:100px;
-    background:#333;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    font-size:50px;
-    cursor:pointer;
-    border-radius:10px;
-}
-
-.cell:hover{
-    background:#444;
-}
-
-button{
-    margin-top:20px;
-    padding:10px 20px;
-    font-size:16px;
-    cursor:pointer;
-}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>website virus haha </title>
 </head>
 <body>
+<center>
+  <h1>Rapi</h1>
+</center>
+  <marquee bgcolor="#8eda62" behavior="" direction="left">RAPI SANG CEO MERCEDES tai</marquee>
 
-<h1>Tic Tac Toe</h1>
-<div id="status">Giliran: X</div>
+<center>
+<p>saya lahir di karawang kosambi 12 juni 1997 saya memiliki ibu bernama suryati dan ayah bernama sumarno.disini saya akan menceritakan kisah hidup saya hingga bisa menjadi orang sukses.</p>
+  
 
-<div class="board" id="board">
-    <div class="cell" data-index="0"></div>
-    <div class="cell" data-index="1"></div>
-    <div class="cell" data-index="2"></div>
-    <div class="cell" data-index="3"></div>
-    <div class="cell" data-index="4"></div>
-    <div class="cell" data-index="5"></div>
-    <div class="cell" data-index="6"></div>
-    <div class="cell" data-index="7"></div>
-    <div class="cell" data-index="8"></div>
-</div>
+  
+</center>
+<p>saya dari kecil belajar bisnis dari ayah saya yang dulu berbisnis jualan sepatu di daerah kosambi.saya dari kecil juga sudah di ajari cara mengelola bisnis sepatu bapak saya.pada suatu hari bapak saya mengalami kerugian karna menurun nya pembeli hingga bapak saya memutuskan untuk berhenti bisnis sepatu</p>   
 
-<button onclick="resetGame()">Main Lagi</button>
 
-<script>
-const cells = document.querySelectorAll('.cell');
-const statusText = document.getElementById('status');
+  <center>
+<p>karna hal itu membuat saya menjadi termotivasi untuk membantu ekonomi keluarga saya.saya belajar dari pengusaha pengusaha besar bagaimana dia membangun bisnis besar sehingga mereka sukse.saya belajar dan belajar.</p>
 
-let board = ["","","","","","","","",""];
-let currentPlayer = "X";
-let gameActive = true;
 
-const winPatterns = [
-    [0,1,2],
-    [3,4,5],
-    [6,7,8],
-    [0,3,6],
-    [1,4,7],
-    [2,5,8],
-    [0,4,8],
-    [2,4,6]
-];
 
-cells.forEach(cell => {
-    cell.addEventListener('click', handleClick);
-});
+    
+  </center>
 
-function handleClick() {
-    const index = this.dataset.index;
 
-    if(board[index] !== "" || !gameActive) return;
+<center>
+<p>suatu hari saya mengalami kesuliatan karna bapak saya tidak bisa membayar uang untuk melanjutkan sekolah saya.namun tidak di sangka sangka saya mendapatkan beasiswa dari smk hingga tamat kuliah.di situ membuat saya yakin kalo saya sungguh sungguh saya bisa menjadi orang sukses.</p>
 
-    board[index] = currentPlayer;
-    this.textContent = currentPlayer;
+  <p>saya kuliah masuk jurusan tata usaha di sana saya banyak belajar bagaimana membangun usaha dari awal hingga akhir di situ saya banyak belajar dan saya kepikiran kalo saaya membuka usaha cuci mobil.singkat cerita usaha cuci mobil yang saya buka laku keras sehingga saya ingin mengubah usaha saya menjadi pembuat mobil mercedes.dan tidak di sangka usaha itu pun laku keras.dan akhir nya saya bisa membanggakan kedua orang tua saya dan adik saya</p>
 
-    checkWinner();
+<p>KESIMPULAN
 
-    if(gameActive){
-        currentPlayer = currentPlayer === "X" ? "O" : "X";
-        statusText.textContent = `Giliran: ${currentPlayer}`;
-    }
-}
+</p>  
+</center>
 
-function checkWinner(){
-    let winner = false;
+<center>
+<p>jika kita mempunyai niat yang baik dan usaha yang sungguh sungguh dan kita juga yakin dengan usaha kita.pasti suatu hari nanti kita akan berhasil menggapai mimpi kita</p>
+  
+</center>
+  
+<br>
+ <br>
+  <center>
 
-    winPatterns.forEach(pattern => {
-        const [a,b,c] = pattern;
+<img width="150px" src="rapin.jpg" alt="">
+    
+  </center>
+  <br>
+  <br>
 
-        if(
-            board[a] &&
-            board[a] === board[b] &&
-            board[a] === board[c]
-        ){
-            winner = true;
-        }
-    });
-
-    if(winner){
-        statusText.textContent = `Pemain ${currentPlayer} Menang! 🎉`;
-        gameActive = false;
-        return;
-    }
-
-    if(!board.includes("")){
-        statusText.textContent = "Seri! 🤝";
-        gameActive = false;
-    }
-}
-
-function resetGame(){
-    board = ["","","","","","","","",""];
-    currentPlayer = "X";
-    gameActive = true;
-
-    statusText.textContent = "Giliran: X";
-
-    cells.forEach(cell => {
-        cell.textContent = "";
-    });
-}
-</script>
-
+<center>
+&copy; rapi sang ceo - 2026
+<br>
+<br>
+&copy; badot haha - texar jaya
+</center>
+  
 </body>
 </html>
